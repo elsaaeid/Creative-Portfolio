@@ -18,7 +18,10 @@
   --bann-light-color: #f7f7f7;
   --main-color: #c1c1c1;
   --secondry: #87bb89;
-  --orange-color: #137a4b;
+  --link-color: #95df2961;
+  --linkHover-color: #95df2982;
+  --linkAHover-color: #ffffff91;
+  --orange-color: #26a04c;
   --sem-orange: #37c34e87;
   --submit-color: #a3de93;
 }
@@ -40,7 +43,75 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+}/*------------------------
+  slider-box
+----------------------*/
+.slider-box {
+  padding: 70px 0px;
+  background: url(../images/shop/img-slider.jpg) no-repeat center center;
+  background-size: auto auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
 }
+.slider-box::before {
+  background: linear-gradient(270deg, #b1141ebd 0%, #0e0d0dde 74%);
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  content: "";
+  position: absolute;
+  z-index: 0;
+}
+.main-instagram.owl-carousel .owl-nav button.owl-prev {
+  background: #000000;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  width: 50px;
+  line-height: 0px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ffffff;
+  top: 0;
+  padding: 0;
+  margin-top: 0;
+  opacity: 1;
+  left: 0px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.main-instagram.owl-carousel .owl-nav button.owl-next {
+  background: #000000;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  width: 50px;
+  line-height: 0px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ffffff;
+  top: 0;
+  padding: 0;
+  margin-top: 0;
+  opacity: 1;
+  right: 0px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.main-instagram.owl-carousel .owl-nav button.owl-next:hover,
+.main-instagram.owl-carousel .owl-nav button.owl-prev:hover {
+  background: #b43935;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -384,7 +455,8 @@ a.linkedin-in {
     margin-bottom: 10px;
     left: 0px;
     height: 100%;
-    width: 100%;
+    width: 99%;
+    top: -3px;
 }
 /*
 .logo-img span:nth-child(1) {
@@ -403,15 +475,18 @@ a.linkedin-in {
   box-shadow: 0px 10px 10px rgb(0 0 0 / 10%);
 }
 */
-.sidebar .profile-img .logo-img:hover {
+img#logoimg {
+    margin-top: 55px;
+}
+#logoimg:hover {
   box-shadow: 10px 10px 10px 10px rgb(0 0 0 / 10%);
 }
 .sidebar .profile-img h4 {
-  color: var(--light-color);
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-family: cursive;
-  font-weight: bold;
+    color: var(--light-color);
+    margin-top: -76px;
+    margin-bottom: 6px;
+    font-family: cursive;
+    font-weight: bold;
 }
 .sidebar .profile-img h4:hover {
   color: var(--main-color);
@@ -613,26 +688,26 @@ label {
   transition: 0.5s;
 }
 .links {
-  content: "";
-  position: absolute;
-  cursor: pointer;
-  top: -65px;
-  left: -74px;
-  width: 658px;
-  height: 640px;
-  background: var(--orange-color);
-  border-left: 4px solid var(--main-color);
-  border-right: 4px solid var(--main-color);
-  border-top: 4px solid var(--orange-color);
-  border-bottom: 4px solid var(--orange-color);
-  border-radius: 457px;
-  transition: all 0.5s ease-in-out;
-  transition-property: width;
-  z-index: 0;
-  box-shadow: 0px 10px 10px rgb(0 0 0 / 10%);
+    content: "";
+    position: absolute;
+    cursor: pointer;
+    top: -65px;
+    left: -74px;
+    width: 658px;
+    height: 640px;
+    background: var(--link-color);
+    border-left: 2px solid var(--main-color);
+    border-right: 2px solid var(--main-color);
+    border-top: 2px solid var(--orange-color);
+    border-bottom: 2px solid var(--orange-color);
+    border-radius: 457px;
+    transition: all 0.5s ease-in-out;
+    transition-property: width;
+    z-index: 0;
+    box-shadow: 0px 10px 10px rgb(0 0 0 / 10%);
 }
 .links a {
-  color: var(--light-color);
+  color: var(--linkAHover-color);
   display: block;
   line-height: 49px;
   text-decoration: none;
@@ -658,37 +733,47 @@ label {
   transition-property: border;
 }
 .links a:hover {
-  background: var(--main-color);
-  border-bottom: 0.1875rem solid var(--light-color);
-  border-top: 0.1875rem solid var(--light-color);
+  background: var(--linkHover-color);
+  border-bottom: 0.1875rem solid var(--linkAHover-color);
+  border-top: 0.1875rem solid var(--linkAHover-color);
 }
 .links a :focus .sidebar a {
-  background: var(--main-color);
-  border-bottom: 0.1875rem solid var(--light-color);
+  background: var(--linkHover-color);
+  border-bottom: 0.1875rem solid var(--linkAHover-color);
 }
 .links a.active:hover {
-  background: var(--main-color);
+  background: var(--linkHover-color);
 }
+
 .links a:nth-child(1) {
   position: absolute;
   top: 0px;
   left: 295px;
   width: 62px;
   padding-top: 7px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 0;
+}
+.links a:nth-child(1).active {
+  background: var(--linkHover-color);
 }
 .links a:nth-child(2) {
-   position: absolute;
-  top: 150px;
-  left: 547px;
-  width: 62px;
-  padding-top: 7px;
+    position: absolute;
+    top: 150px;
+    left: 552px;
+    width: 62px;
+    padding: 4px;
+    border-radius: 100px;
 }
 .links a:nth-child(3) {
     position: absolute;
-  top: 409px;
-  left: 553px;
-  width: 62px;
-  padding-top: 7px;
+    top: 409px;
+    left: 560px;
+    width: 62px;
+    border-radius: 100px;
+    padding: 3px;
 }
 .links a:nth-child(4) {
  position: absolute;
@@ -696,6 +781,10 @@ label {
   left: 295px;
   width: 62px;
   padding-top: 7px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 100px;
 }
 .links a:nth-child(5) {
  position: absolute;
@@ -703,13 +792,15 @@ label {
   left: 32px;
   width: 62px;
   padding-top: 7px;
+  border-radius: 100px;;
 }
 .links a:nth-child(6) {
-  position: absolute;
-  top: 150px;
-  left: 36px;
-  width: 62px;
-  padding-top: 7px;
+    position: absolute;
+    top: 150px;
+    left: 40px;
+    width: 62px;
+    padding-top: 7px;
+    border-radius: 100px;
 }
 .square span:nth-child(1) {
   position: absolute;
@@ -887,7 +978,7 @@ div#p-explain {
 }
 .think {
     width: 60px;
-    height: 60px;
+    height: 74px;
     border-radius: 100px;
     margin-bottom: 10px;
 }
@@ -1086,7 +1177,7 @@ img#bulb {
   transition: 0.5s;
 }
 #checked:checked ~ .content .row {
-  margin-left: 175px;
+  margin-left: 56px;
   transition: 0.5s ease-in-out;
 }
 .skills {
